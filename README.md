@@ -47,6 +47,8 @@ Get-MgDomain -DomainId "yourdomain.com" | Select-Object Id, AuthenticationType, 
 # Inspect applied SAML endpoints and certificate details
 Get-MgDomainFederationConfiguration -DomainId "yourdomain.com" | Format-List
 ```
+# Setup Provisioning Service
 
-Connect-MGGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
-Update-MgDomain -DomainId "ciam.jettech.cc" -BodyParameter @{AuthenticationType="Federated"}
+# Testing
+
+SourceAnchor is a required property for creation of a federated user
